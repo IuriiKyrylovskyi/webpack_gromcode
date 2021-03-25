@@ -1,6 +1,6 @@
-import { renderTasks } from './renderTasks.js';
-import { getItem, setItem } from './storage.js';
-import { updateTask, getTasksList, deleteTask } from './tasksGateway.js';
+import { renderTasks } from "../renderTasks/renderTasks.js";
+import { getItem, setItem } from "../storage/storage.js";
+import { updateTask, getTasksList, deleteTask } from "../tasksGateway/tasksGateway.js";
 
 const afterChangeTask = () => {
   return Promise.resolve()

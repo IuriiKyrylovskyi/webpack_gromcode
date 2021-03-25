@@ -1,5 +1,5 @@
-import { getItem, setItem } from './storage.js';
-import { renderTasks } from './renderTasks.js';
+import { getItem, setItem } from "../storage/storage.js";
+import { renderTasks } from "../renderTasks/renderTasks.js";
 
 export const validateTaskLength = inputText => inputText.length < 5; // ? true: false;
 
