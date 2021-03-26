@@ -18,8 +18,8 @@ const userDataPromise = fetchUser("facebook");
 printProfile({ name: "Tom", from: "The World" });
 
 // убедитесь, скрипт выполнился без ошибок
-console.log(calcResult);
-console.log(sumResult);
-console.log(multResult);
-console.log(userDataPromise);
-console.log(printProfile({ name: "Tom", from: "The World" }));
+// console.log(calcResult);
+// console.log(sumResult);
+// console.log(multResult);
+// console.log(userDataPromise);
+// console.log(printProfile({ name: "Tom", from: "The World" }));
