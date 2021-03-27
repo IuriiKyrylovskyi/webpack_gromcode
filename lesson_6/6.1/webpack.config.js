@@ -9,20 +9,20 @@ module.exports = {
         test: /.s?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-      {
-        test: /.(jpg|png)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              // name: '[path][name].[ext]', // standart
-              name: '[name].[ext]',
-              outputPath: 'images',
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /.(jpg|png)$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 8192,
+      //         // name: '[path][name].[ext]', // standart
+      //         name: '[name].[ext]',
+      //         outputPath: 'images',
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
 };
