@@ -6,9 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "build:styles": "sass ./src/styles/index.scss ./dist/styles.css",
     "copy:html": "cp ./src/index.html ./dist/index.html",
-    "build:scripts": "babel ./src --out-dir=./dist",
+    "build:scripts": "webpack --mode production",
     "clean": "rm -rf ./dist",
     "build": "npm-run-all clean build:* copy:*"
   },
@@ -27,7 +26,9 @@
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
   },
   "dependencies": {
     "core-js": "^3.9.1"
