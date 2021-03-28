@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --devtool eval-source-maps --open",
-    "eslint": "eslint src",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "build": "webpack -p"
   },
   "keywords": [],
