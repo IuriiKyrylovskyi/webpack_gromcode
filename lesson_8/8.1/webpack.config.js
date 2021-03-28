@@ -14,12 +14,7 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.s?css$/i,
-          use: [
-            isProduction
-              ? MiniCssExtractPlugin.loader
-              : "style-loader", "css-loader",
-            "sass-loader"
-          ],
+          use: [isProduction ? MiniCssExtractPlugin.loader : "style-loader", "css-loader", "sass-loader"],
         },
         {
           test: /\.(jpg|png)$/i,
@@ -40,17 +35,20 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: "./src/index.html",
       }),
-      new MiniCssExtractPlugin({
-        filename: "[name].css",
-      }),
     ],
     devServer: {
       port: 9000,
       hot: true,
     },
-    // stats: {
-    //   children: true,
-    // },
   };
+
+  if (isProduction) {
+    config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+      })
+    );
+  }
+
   return config;
 };
