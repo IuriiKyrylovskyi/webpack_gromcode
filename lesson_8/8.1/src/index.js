@@ -4,10 +4,10 @@ import renderProfile from "./profile/renderProfile";
 import "./index.css";
 
 const profileData = {
-  name: "Tom",
+  name: "Tomas",
   location: "The World",
 };
 
 renderProfile(profileData);
 
-alert("App is ready");
+// alert("App is ready");
