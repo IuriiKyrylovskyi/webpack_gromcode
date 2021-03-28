@@ -1,16 +1,14 @@
-import { renderTasks } from "./renderTasks.js";
-import { getItem, setItem } from "./storage.js";
-import { updateTask, getTasksList, deleteTask } from "./tasksGateway.js";
+import { renderTasks } from './renderTasks';
+import { getItem, setItem } from './storage';
+import { updateTask, getTasksList, deleteTask } from './tasksGateway';
 
-const afterChangeTask = () => {
-  return Promise.resolve()
-    .then(() => getTasksList())
-    .then(newTasksList => {
-      setItem('tasksList', newTasksList);
-      renderTasks();
-    });
-};
-const onDeleteTask = taskId => {
+const afterChangeTask = () => Promise.resolve()
+  .then(() => getTasksList())
+  .then((newTasksList) => {
+    setItem('tasksList', newTasksList);
+    renderTasks();
+  });
+const onDeleteTask = (taskId) => {
   deleteTask(taskId).then(() => afterChangeTask());
   // .then(() => getTasksList())
   // .then(newTasksList => {
@@ -20,7 +18,7 @@ const onDeleteTask = taskId => {
 };
 
 const onToggleTask = (tasksList, taskId, done) => {
-  const { text, createDate } = tasksList.find(task => task.id === taskId);
+  const { text, createDate } = tasksList.find((task) => task.id === taskId);
 
   const updatedTask = {
     text,
@@ -30,15 +28,15 @@ const onToggleTask = (tasksList, taskId, done) => {
   };
 
   updateTask(taskId, updatedTask)
-    .then(() => afterChangeTask())
-    // .then(() => getTasksList())
-    // .then(newTasksList => {
-    //   setItem('tasksList', newTasksList);
-    //   renderTasks();
-    // });
+    .then(() => afterChangeTask());
+  // .then(() => getTasksList())
+  // .then(newTasksList => {
+  //   setItem('tasksList', newTasksList);
+  //   renderTasks();
+  // });
 };
 
-export const onListItemClick = e => {
+export const onListItemClick = (e) => {
   const taskId = e.target.dataset.id;
 
   if (e.target.classList.contains('list__item-delete-btn')) {

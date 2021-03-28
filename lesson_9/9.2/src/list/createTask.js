@@ -1,6 +1,6 @@
-import { createTask, getTasksList } from "./tasksGateway.js";
-import { renderTasks } from "./renderTasks.js";
-import { setItem } from "./storage.js";
+import { createTask, getTasksList } from './tasksGateway';
+import { renderTasks } from './renderTasks';
+import { setItem } from './storage';
 
 export const onCreateTask = () => {
   const taskTitleInputElem = document.querySelector('.task-input');
@@ -21,12 +21,10 @@ export const onCreateTask = () => {
 
   createTask(newTask)
     .then(() => getTasksList())
-    .then(newTasksList => {
+    .then((newTasksList) => {
       setItem('tasksList', newTasksList);
       renderTasks();
     });
-
-
 };
 
 // 1. Prepare data
